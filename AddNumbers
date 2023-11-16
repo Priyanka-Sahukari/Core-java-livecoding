@@ -1,0 +1,36 @@
+/*
+ Write a do-while loop that asks the user to enter two numbers. The numbers should be
+ added and the sum displayed. The loop should ask the user whether he or she wishes 
+ to perform the operation again. If so, the loop should repeat; otherwise it should 
+ terminate.
+*/
+
+
+package livecoding;
+
+import java.util.Scanner;
+
+public class AddNumbers {
+    public static void main(String[] args) {
+    	//Creating Object to take input from user
+        Scanner s = new Scanner(System.in);
+        char wish;
+        
+        do {
+            System.out.print("Enter first number ");
+            int num1 = s.nextInt();
+            System.out.print("Enter second number ");
+            int num2 = s.nextInt();
+            //Calculating sum
+            int sum = num1 + num2;
+            System.out.println("Sum " + sum);
+            //Asking user to perform operation
+            System.out.print("Do you want to perform again? (y/n): ");
+            wish = s.next().charAt(0);
+        } while (wish == 'y' || wish == 'Y');
+
+        System.out.println("terminated.");
+        s.close();
+    }
+}
+
